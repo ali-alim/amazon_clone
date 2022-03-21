@@ -41,14 +41,28 @@ function Header() {
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>
           <div className="relative link flex items-center">
-            <span className="absolute top-0 right-0 md:right-10 w-4 h-4 bg-yellow-400 text-center rounded-full text-black font-bold">0</span>
-            <ShoppingCartIcon className="h-10"/>
-            <p className="hidden md:inline font-extrabold mt-2 md:text-sm">Basket</p>
+            <span className="absolute top-0 right-0 md:right-10 w-4 h-4 bg-yellow-400 text-center rounded-full text-black font-bold">
+              0
+            </span>
+            <ShoppingCartIcon className="h-10" />
+            <p className="hidden md:inline font-extrabold mt-2 md:text-sm">
+              Basket
+            </p>
           </div>
         </div>
       </div>
       {/* BOTTOM NAV */}
-      <div></div>
+      <div className="flex items-center bg-amazon_blue-light text-white text-sm space-x-3 h-6 p-2 pl-6 ">
+        <p className="link flex items-center">
+          <MenuIcon className="h-6 mr-1" />
+          All
+        </p>
+        <p className="link">Today's deals</p>
+        <p className="link">Customer Service</p>
+        <p className="link">Registry</p>
+        <p className="link hidden md:inline-flex">Gift Cards</p>
+        <p className="link hidden md:inline-flex">Sell</p>
+      </div>
     </header>
   );
 }

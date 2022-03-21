@@ -10,6 +10,13 @@ export default function Home() {
 
     {/* HEADER */}
     <Header />
+    <main>
+      {/* Banner */}
+    <div className='max-w-screen-2xl mx-auto'>
+
+    </div>
+      {/* ProductFeed */}
+    </main>
     </div>
   );
 }
