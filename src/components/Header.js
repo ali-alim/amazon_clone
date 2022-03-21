@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MenuIcon, SearchIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 function Header() {
   return (
     <header>
@@ -12,6 +13,11 @@ function Header() {
             objectFit="contain"
             className="cursor-pointer"
           />
+        </div>
+        {/* SEARCH */}
+        <div>
+          <BeakerIcon className="h-7 w-7 text-white"/>
+          <input type="text" />
         </div>
       </div>
 
