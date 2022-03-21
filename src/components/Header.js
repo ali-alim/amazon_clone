@@ -11,13 +11,14 @@ function Header() {
             width={150}
             height={40}
             objectFit="contain"
-            className="cursor-pointer"
+            className="cursor-pointer" 
           />
         </div>
         {/* SEARCH */}
-        <div>
-          <BeakerIcon className="h-7 w-7 text-white"/>
-          <input type="text" />
+        
+        <div className=" hidden sm:flex items-center h-10 rounded-md cursor-pointer flex-grow bg-yellow-400 hover:bg-yellow-500">
+          <input className="p-2 h-full w-6 flex-grow flex-shrink focus:outline-none rounded-l-md" type="text" />
+          <SearchIcon className="h-12 p-4"/>
         </div>
       </div>
 
