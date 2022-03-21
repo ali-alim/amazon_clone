@@ -4,7 +4,11 @@
 
 @layer components {
   .link {
-    @apply cursor-pointer hover:underline;
+    @apply cursor-pointer hover:underline text-xs ;
+  }
+
+  .link-bn{
+      @apply cursor-pointer hover:underline text-xs md:text-sm
   }
 
   .button {

@@ -57,11 +57,11 @@ function Header() {
           <MenuIcon className="h-6 mr-1" />
           All
         </p>
-        <p className="link">Today's deals</p>
-        <p className="link">Customer Service</p>
-        <p className="link">Registry</p>
-        <p className="link hidden md:inline-flex">Gift Cards</p>
-        <p className="link hidden md:inline-flex">Sell</p>
+        <p className="link-bn">Today's deals</p>
+        <p className="link-bn">Customer Service</p>
+        <p className="link-bn hidden md:inline-flex">Registry</p>
+        <p className="link-bn hidden md:inline-flex">Gift Cards</p>
+        <p className="link-bn hidden md:inline-flex">Sell</p>
       </div>
     </header>
   );
