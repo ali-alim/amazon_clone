@@ -1,14 +1,20 @@
+import Product from "./Product";
+
 function ProductFeed({ products }) {
   return (
     <div>
       <h1>Products here...</h1>
+
       {products.map(({ id, title, price, description, category, image }) => (
-        <div>
-          <p>#{id}</p>
-          <p>#{title}</p>
-          <p># {description}</p>
-          .........
-        </div>
+        <Product
+          key={id}
+          id={id}
+          title={title}
+          price={price}
+          description={description}
+          category={category}
+          image={image}
+        />
       ))}
     </div>
   );
