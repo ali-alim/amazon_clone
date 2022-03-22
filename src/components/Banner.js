@@ -1,5 +1,12 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Image from 'next/image'
+import beauty from '../images/beauty.jpg'
+import laptops from '../images/laptops.jpg'
+import localcurrency from '../images/localcurrency.jpg'
+import shipping from '../images/shipping.jpg'
+import space from '../images/space.jpg'
+import toys from '../images/toys.jpg'
 
 function Banner() {
   return (
@@ -16,19 +23,44 @@ function Banner() {
         <div>
             <img 
             loading="lazy"
-            src="https://links.papareact.com/gi1" 
+            // src="https://links.papareact.com/gi1" 
+            src={beauty} 
+            layout='fill'
             alt="" />
         </div>
         <div>
             <img 
             loading="lazy"
-            src="https://links.papareact.com/6ff" 
+            src={laptops} 
+            layout='fill'
             alt="" />
         </div>
         <div>
             <img 
             loading="lazy"
-            src="https://links.papareact.com/7ma" 
+            src={localcurrency} 
+            layout='fill'
+            alt="" />
+        </div>
+        <div>
+            <img 
+            loading="lazy"
+            src={shipping} 
+            layout='fill'
+            alt="" />
+        </div>
+        <div>
+            <img 
+            loading="lazy"
+            src={space} 
+            layout='fill'
+            alt="" />
+        </div>
+        <div>
+            <img 
+            loading="lazy"
+            src={toys} 
+            layout='fill'
             alt="" />
         </div>
 
