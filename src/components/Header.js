@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/outline";
 
 function Header() {
-  const 
+  const { data: session, status } = useSession()
   return (
     <header>
       {/* TOP NAV */}
@@ -34,8 +34,10 @@ function Header() {
 
         {/* RIGHT SECTION   */}
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div onClick={() => signIn()} className="link cursor-pointer">
-            <p>Hello Ali M.</p>
+          <div onClick={!session ? signIn : signOut} className="link cursor-pointer">
+            <p>
+              {session ? `Hello, ${session.user.name}` : 'Sign In'}
+            </p>
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>
 
