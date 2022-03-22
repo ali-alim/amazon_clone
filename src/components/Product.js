@@ -27,7 +27,7 @@ function Product({ id, title, price, description, category, image }) {
           value={price}
           displayType={"text"}
           thousandSeparator={true}
-          prefix={"$"}
+          suffix={"₾"}
         />
       </div>
       {hasPrime && (
