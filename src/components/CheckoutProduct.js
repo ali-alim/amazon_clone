@@ -33,6 +33,7 @@ function CheckoutProduct({
           thousandSeparator={true}
           suffix={"₾"}
         />
+        
         {hasPrime && (
           <div className="flex items-center space-x-2">
           <img loading="lazy" className="w-12" src="https://links.papareact.com/fdw" alt="" />  
@@ -40,6 +41,11 @@ function CheckoutProduct({
           </div>
         )}
       </div>
+       {/* Right add/remove buttons */}
+       <div className="flex flex-col justify-items-end my-auto space-y-2">
+         <div className="button">Add to Basket</div>
+         <div className="button">Remove from Basket</div>
+       </div>
     </div>
   );
 }
