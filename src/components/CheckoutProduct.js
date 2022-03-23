@@ -1,5 +1,6 @@
 import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
+import CurrencyFormat from "react-currency-format";
 
 function CheckoutProduct({
   id,
@@ -26,6 +27,18 @@ function CheckoutProduct({
         <p className="text-xs my-2 line-clamp-3">
           {description}
         </p>
+        <CurrencyFormat
+          value={price}
+          displayType={"text"}
+          thousandSeparator={true}
+          suffix={"₾"}
+        />
+        {hasPrime && (
+          <div className="flex items-center space-x-2">
+          <img loading="lazy" className="w-12" src="https://links.papareact.com/fdw" alt="" />  
+          <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
+          </div>
+        )}
       </div>
     </div>
   );
