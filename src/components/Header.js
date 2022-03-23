@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {useRouter} from "next/router"
 import {signIn, signOut, useSession} from "next-auth/react";
 import {
   MenuIcon,
@@ -8,13 +9,15 @@ import {
 
 function Header() {
   const { data: session, status } = useSession()
+  const router = useRouter()
   return (
-    <header>
+    <header className="sticky top-0 z-50">
       {/* TOP NAV */}
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
         {/* LOGO */}
         <div className="mt-2 flex item-center flex-grow sm:flex-grow-0">
           <Image
+          onClick={()=>router.push('/')}
             src="https://links.papareact.com/f90"
             width={150}
             height={40}
