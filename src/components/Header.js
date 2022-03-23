@@ -6,10 +6,14 @@ import {
   SearchIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/outline";
+import { useSelector } from "react-redux";
+import { selectItems } from "../slices/basketSlice";
 
 function Header() {
-  const { data: session, status } = useSession()
-  const router = useRouter()
+  const { data: session, status } = useSession();
+  const router = useRouter();
+  const items = useSelector(selectItems)
+
   return (
     <header className="sticky top-0 z-50">
       {/* TOP NAV */}
@@ -50,7 +54,7 @@ function Header() {
           </div>
           <div onClick = {()=>router.push('/checkout')} className="relative link flex items-center">
             <span className="absolute top-0 right-0 md:right-10 w-4 h-4 bg-yellow-400 text-center rounded-full text-black font-bold">
-              0
+              {items.length}
             </span>
             <ShoppingCartIcon className="h-10" />
             <p className="hidden md:inline font-extrabold mt-2 md:text-sm">

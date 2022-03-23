@@ -1,6 +1,7 @@
 import Header from "../components/Header"
 import Image from "next/image"
 function Checkout() {
+    // const 
   return (
     <div className="bg-gray-100">
     <Header />
@@ -19,6 +20,7 @@ function Checkout() {
         </div>
 
         {/* Right Side */}
+        <div></div>
     </main>
     </div>
   )
