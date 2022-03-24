@@ -592,6 +592,11 @@
     "redux-thunk" "^2.3.0"
     "reselect" "^4.0.0"
 
+"@stripe/stripe-js@^1.25.0":
+  "integrity" "sha512-cywIoKu3sJnBPQ1eKi3BzFHWslA2ePqHvQhcxp7iYYlo1tWcVgEKTSh7y7hb6GoR4TyT3DwlK4v1vOZpVg8u4Q=="
+  "resolved" "https://registry.npmjs.org/@stripe/stripe-js/-/stripe-js-1.25.0.tgz"
+  "version" "1.25.0"
+
 "@tailwindcss/line-clamp@^0.2.0":
   "integrity" "sha512-+jXSdRK3/9V/BCPCr+iNpMMhxWMMv62vn/AS2b3/ClmueGuhCijW3bUwO1IiHnE7uCaF74Sli8jUCv9djwvpLg=="
   "resolved" "https://registry.npmjs.org/@tailwindcss/line-clamp/-/line-clamp-0.2.0.tgz"
