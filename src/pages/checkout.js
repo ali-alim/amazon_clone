@@ -10,7 +10,6 @@ import axios from "axios";
 const stripePromise = loadStripe(process.env.stripe_public_key);
 
 function Checkout() {
-  
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
   const { data: session, status } = useSession();
@@ -18,10 +17,19 @@ function Checkout() {
     const stripe = await stripePromise;
 
     //call the backend to create a checkout session
-    const checkoutSession = await axios.post('/api/create-checkout-session',{
+    const checkoutSession = await axios.post('/api/create-checkout-session', {
       items: items,
-      email: session.user.email
-    })
+      email: session.user.email,
+    });
+
+    //redirect user/customer to the Stripe Checkout
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+
+    if (result.error) {
+      alert(result.error.message);
+    }
   };
   return (
     <div className="bg-gray-100">
@@ -74,8 +82,11 @@ function Checkout() {
                 </span>
               </h2>
 
-              <form action="/create-checkout-session">
+              {/* <form action="/create-checkout-session" method="POST"> */}
                 <button
+                  // type="submit"
+                  role="link"
+                  onClick={createCheckoutSession}
                   disabled={!session}
                   className={`button mt-2 ${
                     !session &&
@@ -84,7 +95,7 @@ function Checkout() {
                 >
                   {!session ? "Sign in to checkout" : "Proceed to checkout"}
                 </button>
-              </form>
+              {/* </form> */}
             </>
           )}
         </div>
