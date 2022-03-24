@@ -16,6 +16,8 @@ export default NextAuth({
 
         // .. add more providers here
     ],
-    secret: process.env.GOOGLE_SECRET,
+
+    //recom. from sof
+    // secret: process.env.GOOGLE_SECRET,
     
 })
