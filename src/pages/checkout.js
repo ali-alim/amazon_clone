@@ -84,7 +84,6 @@ function Checkout() {
 
               {/* <form action="/create-checkout-session" method="POST"> */}
                 <button
-                  // type="submit"
                   role="link"
                   onClick={createCheckoutSession}
                   disabled={!session}

@@ -23,7 +23,6 @@ function Banner() {
         <div>
             <img 
             loading="lazy"
-            // src="https://links.papareact.com/gi1" 
             src={beauty} 
             layout='fill'
             alt="" />

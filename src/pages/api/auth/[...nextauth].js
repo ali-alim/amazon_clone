@@ -11,7 +11,5 @@ export default NextAuth({
     ],
     secret:'secret token'
 
-    //recom. from sof
-    // secret: process.env.GOOGLE_SECRET,
     
 })
