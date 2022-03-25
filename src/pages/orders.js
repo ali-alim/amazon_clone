@@ -1,8 +1,8 @@
 import moment from "moment";
-import { getSession,useSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import db from "../../firebase";
 import Header from "../components/Header";
-function Orders() {
+function Orders({orders}) {
   const { data: session, status } = useSession();
   return (
     <div>
@@ -18,9 +18,9 @@ function Orders() {
         )}
 
         <div className="mt-5 space-y-4">
-            {orders.map(order => (
-                <Order />
-            ))}
+          {orders.map((order) => (
+            <Order />
+          ))}
         </div>
       </main>
     </div>
@@ -40,7 +40,7 @@ export async function getServerSideProps(context) {
       props: {},
     };
   }
-
+  //Firebase db
   const stripeOrders = await db
     .collection("users")
     .doc(session.user.email)
@@ -50,24 +50,23 @@ export async function getServerSideProps(context) {
 
   //stripe orders
   const orders = await Promise.all(
-      stripeOrders.docs.map(async(order) => ({
-          id:order.id,
-          amount: order.data().amount,
-          amountShipping: order.data().amount_shipping,
-          images: order.data().images,
-          timestamp: moment(order.data().timestamp.toDate()).unix(),
-          items: (
-              await stripe.checkout.sessions.listLineItems(order.id, {
-                  limit: 100,
-              })
-          ).data,
-      }))
+    stripeOrders.docs.map(async (order) => ({
+      id: order.id,
+      amount: order.data().amount,
+      amountShipping: order.data().amount_shipping,
+      images: order.data().images,
+      timestamp: moment(order.data().timestamp.toDate()).unix(),
+      items: (
+        await stripe.checkout.sessions.listLineItems(order.id, {
+          limit: 100,
+        })
+      ).data,
+    }))
   );
 
   return {
-      props: {
-          orders
-      }
-  }
-
+    props: {
+      orders,
+    },
+  };
 }
